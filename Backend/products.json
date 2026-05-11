@@ -1,0 +1,82 @@
+[
+  {
+    "_id": "1",
+    "name": "Laptop",
+    "price": 999,
+    "image": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=300&h=200&fit=crop",
+    "description": "A powerful laptop for work and gaming.",
+    "category": "Electronics",
+    "stock": 10,
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "_id": "2",
+    "name": "Smartphone",
+    "price": 699,
+    "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=300&h=200&fit=crop",
+    "description": "Latest smartphone with advanced features.",
+    "category": "Electronics",
+    "stock": 15,
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "_id": "3",
+    "name": "Headphones",
+    "price": 199,
+    "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=200&fit=crop",
+    "description": "Noise-cancelling wireless headphones.",
+    "category": "Electronics",
+    "stock": 20,
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "_id": "4",
+    "name": "Book",
+    "price": 29,
+    "image": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300&h=200&fit=crop",
+    "description": "Bestselling novel.",
+    "category": "Books",
+    "stock": 50,
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "_id": "5",
+    "name": "T-Shirt",
+    "price": 19,
+    "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&h=200&fit=crop",
+    "description": "Comfortable cotton t-shirt.",
+    "category": "Clothing",
+    "stock": 30,
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "_id": "6",
+    "name": "Shoes",
+    "price": 89,
+    "image": "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=300&h=200&fit=crop",
+    "description": "Stylish running shoes.",
+    "category": "Clothing",
+    "stock": 25,
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "_id": "7",
+    "name": "Watch",
+    "price": 299,
+    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&h=200&fit=crop",
+    "description": "Elegant wristwatch.",
+    "category": "Accessories",
+    "stock": 12,
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "_id": "8",
+    "name": "Camera",
+    "price": 599,
+    "image": "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=300&h=200&fit=crop",
+    "description": "Professional DSLR camera.",
+    "category": "Electronics",
+    "stock": 8,
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  }
+]

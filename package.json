@@ -4,13 +4,24 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node Backend/server.js",
+    "seed": "node Backend/seed.js",
+    "dev": "nodemon Backend/server.js",
+    "frontend": "cd Frontend && npm run dev",
+    "backend": "npm run dev",
+    "install-frontend": "cd Frontend && npm install",
+    "install-backend": "npm install",
+    "build-frontend": "cd Frontend && npm run build"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^17.4.2",
     "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.2",
     "mongoose": "^9.5.0",
     "nodemon": "^3.1.14"
   }
