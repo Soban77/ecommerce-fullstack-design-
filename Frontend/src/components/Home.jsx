@@ -70,7 +70,7 @@ const Home = () => {
             {products.map(product => (
               <div key={product._id} className="product-card">
                 <div className="product-image">
-                  <img src={product.image || '/src/assets/placeholder.png'} alt={product.name} />
+                  <img src={product.image} alt={product.name} />
                   <div className="product-overlay">
                     <Link to={`/product/${product._id}`} className="quick-view">Quick View</Link>
                   </div>
