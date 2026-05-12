@@ -9,7 +9,7 @@ const ProductList = () => {
   const searchTerm = searchParams.get('search') || '';
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/products')
+    axios.get(`${process.env.REACT_APP_API_URL}/api/products`)
       .then(response => setProducts(response.data))
       .catch(error => console.log(error));
   }, []);

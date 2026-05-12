@@ -4,8 +4,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "NODE_ENV=production node Backend/server.js",
-    "dev": "NODE_ENV=development nodemon Backend/server.js",
+    "start": "set NODE_ENV=production&& node Backend/server.js",
+    "dev": "set NODE_ENV=development&& nodemon Backend/server.js",
     "seed": "node Backend/seed.js",
     "build": "npm run build-frontend",
     "build-frontend": "cd Frontend && npm run build",

@@ -58,6 +58,14 @@ app.get('/health', (req, res) => {
   });
 });
 
+// Connect to MongoDB
+mongoose.connect(process.env.MONGODB_URI)
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => {
+    console.log('MongoDB connection error:', err);
+    process.exit(1);
+  });
+
 // User Schema
 const userSchema = new mongoose.Schema({
   name: { type: String, required: true },
@@ -246,7 +254,7 @@ app.delete('/api/products/:id', async (req, res) => {
 
 // Catch-all handler: send back React's index.html file for client-side routing
 if (process.env.NODE_ENV === 'production') {
-  app.get('*', (req, res) => {
+  app.use((req, res) => {
     res.sendFile(path.join(__dirname, '../Frontend/dist/index.html'));
   });
 }

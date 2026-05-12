@@ -9,7 +9,7 @@ const Home = () => {
 
   useEffect(() => {
     // Fetch featured products
-    axios.get('http://localhost:5000/api/products')
+    axios.get(`${process.env.REACT_APP_API_URL}/api/products`)
       .then(response => {
         setProducts(response.data.slice(0, 8)); // Show first 8 products
         // Extract unique categories

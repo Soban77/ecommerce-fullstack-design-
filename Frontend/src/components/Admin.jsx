@@ -13,15 +13,15 @@ const Admin = () => {
     stock: '',
   });
 
-  useEffect(() => {
-    fetchProducts();
-  }, []);
-
   const fetchProducts = () => {
-    axios.get('http://localhost:5000/api/products')
+    axios.get(`${process.env.REACT_APP_API_URL}/api/products`)
       .then(response => setProducts(response.data))
       .catch(error => console.log(error));
   };
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
 
   const handleInputChange = (e) => {
     setNewProduct({ ...newProduct, [e.target.name]: e.target.value });
@@ -29,7 +29,7 @@ const Admin = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:5000/api/products', newProduct)
+    axios.post(`${process.env.REACT_APP_API_URL}/api/products`, newProduct)
       .then(() => {
         fetchProducts();
         setNewProduct({
@@ -45,7 +45,7 @@ const Admin = () => {
   };
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:5000/api/products/${id}`)
+    axios.delete(`${process.env.REACT_APP_API_URL}/api/products/${id}`)
       .then(() => fetchProducts())
       .catch(error => console.log(error));
   };
