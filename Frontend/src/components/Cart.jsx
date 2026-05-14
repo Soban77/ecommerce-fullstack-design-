@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Cart.css';
 
 const Cart = () => {
   const [cart, setCart] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const savedCart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -36,7 +38,7 @@ const Cart = () => {
           ))}
           <div className="total">
             <h2>Total: ${total.toFixed(2)}</h2>
-            <button>Checkout</button>
+            <button onClick={() => navigate('/checkout')}>Checkout</button>
           </div>
         </div>
       )}
