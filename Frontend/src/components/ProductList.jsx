@@ -7,6 +7,7 @@ const ProductList = () => {
   const [products, setProducts] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const searchTerm = searchParams.get('search') || '';
+  const category = searchParams.get('category') || '';
 
   useEffect(() => {
     axios.get(`${process.env.REACT_APP_API_URL}/api/products`)
@@ -14,15 +15,28 @@ const ProductList = () => {
       .catch(error => console.log(error));
   }, []);
 
-  const filteredProducts = products.filter(product =>
-    product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    product.category.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredProducts = products.filter(product => {
+    const matchesSearch = searchTerm
+      ? product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        product.category.toLowerCase().includes(searchTerm.toLowerCase())
+      : true;
+
+    const matchesCategory = category
+      ? product.category.toLowerCase() === category.toLowerCase()
+      : true;
+
+    return matchesSearch && matchesCategory;
+  });
 
   const handleSearchChange = (e) => {
     const value = e.target.value;
     if (value) {
-      setSearchParams({ search: value });
+      const params = {};
+      if (category) params.category = category;
+      params.search = value;
+      setSearchParams(params);
+    } else if (category) {
+      setSearchParams({ category });
     } else {
       setSearchParams({});
     }
